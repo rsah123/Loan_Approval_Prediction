@@ -1,5 +1,9 @@
 # Loan Approval Prediction
 
+## Live Demo
+
+https://loan-approval-prediction123.streamlit.app
+
 A machine learning classification project that predicts whether a loan application is likely to be approved or rejected based on applicant and loan-related information.
 
 ## Features Used
