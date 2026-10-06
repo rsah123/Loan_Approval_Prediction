@@ -71,8 +71,15 @@ if st.button("Predict Loan Approval"):
     }])
 
     prediction = model.predict(input_data)[0]
+probabilities = model.predict_proba(input_data)[0]
 
-    if prediction == "Y":
-        st.success("Loan is likely to be APPROVED.")
-    else:
-        st.error("Loan is likely to be REJECTED.")
+rejection_probability = probabilities[0]
+approval_probability = probabilities[1]
+
+st.write(f"Rejection Probability: {rejection_probability:.2%}")
+st.write(f"Approval Probability: {approval_probability:.2%}")
+
+if prediction == "Y":
+    st.success("Loan is likely to be APPROVED.")
+else:
+    st.error("Loan is likely to be REJECTED.")
